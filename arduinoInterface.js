@@ -13,6 +13,11 @@ module.exports = class ArduinoInterface {
 		process.stdout.write('Scanning devices...')
 		findArduino()
 			.then(port => {
+				if (!port) {
+					console.log('nothing found')
+					process.exit(1)
+				}
+
 				this.port = port;
 				this.connected = false;
 				process.stdout.write('device found\n')
