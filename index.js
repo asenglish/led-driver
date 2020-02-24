@@ -17,6 +17,7 @@ init = async () => {
         await arduino.setValue('13', 'HIGH')
         sleep.sleep(1)
         await arduino.setValue('12', 'LOW')
+        sleep.sleep(1)
         await arduino.setValue('13', 'LOW')
         sleep.sleep(1)
     }
