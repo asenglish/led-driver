@@ -129,6 +129,7 @@ findArduino = async () => {
 	const ports = await SerialPort.list()
 	let port = null;
 	ports.forEach((scannedPort) => {
+		console.log(scannedPort)
 		if (scannedPort['manufacturer'] && scannedPort['manufacturer'].includes('arduino')) {
 			port = scannedPort.path;
 			return
